@@ -32,13 +32,13 @@ export class MathjaxComponent implements OnChanges,OnInit {
     let angObj = this;
     setTimeout(() => {
       angObj.mathJaxObject['Hub'].Queue(["Typeset", angObj.mathJaxObject.Hub], 'mathContent');
-    }, 1000)
+    },1000)
   }
   loadMathConfig() {
     this.updateMathObt();
     this.mathJaxObject.Hub.Config({
       showMathMenu: false,
-      tex2jax: { inlineMath: [["\(", "\)"]],displayMath:[["\[", "\]"]] },
+      tex2jax: { inlineMath: [["$", "$"]],displayMath:[["$$", "$$"]] },
       menuSettings: { zoom: "Double-Click", zscale: "150%" },
       CommonHTML: { linebreaks: { automatic: true } },
       "HTML-CSS": { linebreaks: { automatic: true } },
